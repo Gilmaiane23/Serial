@@ -55,4 +55,6 @@ void stop_buzzer(uint buzzer_pin) {
     uint slice_num = pwm_gpio_to_slice_num(buzzer_pin);
     pwm_set_gpio_level(buzzer_pin, 0);           // Define o duty cycle como 0 (sem som)
     pwm_set_enabled(slice_num, false);   
+    sleep_ms(20); 
+
 }
