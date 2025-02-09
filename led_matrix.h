@@ -15,44 +15,29 @@
 #define OUT_PIN 7
 #define NUM_PIXELS 25
 
-extern uint sm;  // Declaração da variável global, sem inicialização
 extern PIO pio;  // Declare como extern para ser definida em outro arquivo
 
 void bin_printf(int num);
-double convertDrawingToMatrixIndex(double *desenho, int index);
-void draw(double **desenhoRGB);
-void animate(double ***movie, uint frames, uint sleep_time);
-void desenho_pioA(double *desenho, PIO pio, uint sm, double r, double g, double b);
-void desenho_pioB(double *desenho, PIO pio, uint sm, double r, double g, double b);
-void desenho_pioC(double *desenho, PIO pio, uint sm, double r, double g, double b);
-void desenho_pioD(double *desenho, PIO pio, uint sm, double r, double g, double b);
-void desenho_pio20(double *desenho, PIO pio, uint sm, double r, double g, double b);
-void executar_a(PIO pio, uint sm);
-extern void desenho_on(double *desenho, PIO pio, uint sm, double r, double g, double b);
 void animacao(uint8_t repeticoes, uint8_t num_frames, uint32_t desenho[num_frames][NUM_PIXELS], uint sm);
 void setup_led_matrix();
+void draw(double **desenhoRGB);
+void anima(uint8_t num_frames, uint32_t desenho[num_frames][NUM_PIXELS], uint sm);
 
-extern uint32_t daniel[15][NUM_PIXELS];
-extern uint32_t arthur[9][NUM_PIXELS];
-extern uint32_t gil[7][NUM_PIXELS];
-extern uint32_t julio[5][NUM_PIXELS];
-extern uint32_t pablo[5][NUM_PIXELS];
-extern uint32_t andre[10][NUM_PIXELS];
-extern uint32_t xadrez[17][NUM_PIXELS];
-extern uint32_t daniel_alencar[8][NUM_PIXELS];
-extern uint32_t jogo[17][NUM_PIXELS];
+void desenho_pio1(double *desenho, PIO pio, uint sm, double r, double g, double b);
 
-extern double desenhopadrao[25];
-extern double desenhoA[25];
-extern double desenhoB[25];
-extern double desenhoC[25];
-extern double desenhoD[25];
-extern double desenho20[25];
-extern double frameA[NUM_PIXELS];
-extern double frameB[NUM_PIXELS];
-extern double frameC[NUM_PIXELS];
-extern double frameD[NUM_PIXELS];
-extern double frameE[NUM_PIXELS];
+extern uint32_t xadrez[10][NUM_PIXELS];
+extern double desenho1[25];
+extern double desenho2[25];
+extern double desenho3[25];
+extern double desenho4[25];
+extern double desenho5[25];
+extern double desenho6[25];
+extern double desenho7[25];
+extern double desenho8[25];
+extern double desenho9[25];
+extern double desenho0[25];
+extern double apagaleds[25];
+extern double coracao[25];
 
 
 #endif // LED_MATRIX_H
