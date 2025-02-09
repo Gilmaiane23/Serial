@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(pio_matrix pio_matrix.c led_control.c teclado.c reboot.c led_matrix.c buzzer.c ) # Adiciona o arquivo .c 
+add_executable(pio_matrix pio_matrix.c ssd1306.c reboot.c led_matrix.c buzzer.c ) # Adiciona o arquivo .c 
 
 pico_set_program_name(pio_matrix "pio_matrix")
 pico_set_program_version(pio_matrix "0.1")
@@ -48,11 +48,10 @@ pico_generate_pio_header(pio_matrix ${CMAKE_CURRENT_LIST_DIR}/pio_matrix.pio)
 
 target_sources(pio_matrix PRIVATE
     pio_matrix.c
-    led_control.c
-    teclado.c
     reboot.c
     led_matrix.c
     buzzer.c
+    ssd1306.c
     )
 
 # Add the standard library to the build
@@ -61,6 +60,7 @@ target_link_libraries(pio_matrix PRIVATE
         hardware_pio
 	    hardware_adc
         hardware_pwm
+        hardware_i2c
         pico_bootrom
         )
 
